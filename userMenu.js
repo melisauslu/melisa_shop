@@ -1,16 +1,16 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import { FavoriteContext } from "../context/FavoriteContext"; // ⭐️ Favori context eklendi
+import { FavoriteContext } from "../context/FavoriteContext"; 
 
 function UserMenu() {
     const { user, logout } = useContext(AuthContext);
-    const { clearFavorites } = useContext(FavoriteContext); // ⭐️ Favori temizleyici alındı
+    const { clearFavorites } = useContext(FavoriteContext);
     const [menuOpen, setMenuOpen] = useState(false);
     const navigate = useNavigate();
     const menuRef = useRef();
 
-    // Dış tıklama ile menüyü kapatma
+    
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -63,8 +63,8 @@ function UserMenu() {
                     </Link>
                     <button
                         onClick={() => {
-                            logout();              // Kullanıcı çıkışı
-                            clearFavorites();      // ⭐️ Favorileri sıfırla
+                            logout();              
+                            clearFavorites();      
                             setMenuOpen(false);
                             navigate("/");
                         }}
@@ -79,3 +79,4 @@ function UserMenu() {
 }
 
 export default UserMenu;
+
