@@ -11,14 +11,14 @@ function CheckoutPage() {
     const handlePayment = async (e) => {
         e.preventDefault();
 
-        // 1. Kullanıcı bilgisi alınır
+        
         const user = JSON.parse(localStorage.getItem("user"));
         if (!user) {
             alert("Ödeme yapabilmek için giriş yapmalısınız.");
             return;
         }
 
-        // 2. Sipariş verisi hazırlanır
+       
         const orderData = {
             userId: user._id,
             products: cartItems.map((item) => ({
@@ -34,11 +34,11 @@ function CheckoutPage() {
             address: "Adres bilgisi örnek", // burayı daha sonra detaylı alabilirsin
         };
 
-        // 3. Sipariş backend’e gönderilir
+       
         try {
             await api.post("/orders", orderData);
-            clearCart(); // sepet temizlenir
-            setSuccess(true); // başarılı ekranı gösterilir
+            clearCart(); 
+            setSuccess(true); 
         } catch (error) {
             console.error("Sipariş kaydedilemedi:", error);
             alert("Sipariş kaydedilirken bir hata oluştu.");
@@ -103,3 +103,4 @@ function CheckoutPage() {
 }
 
 export default CheckoutPage;
+
