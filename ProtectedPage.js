@@ -20,11 +20,12 @@ function ProtectedPage() {
 
     return (
         <div>
-            <h2 className="text-xl font-semibold mb-4">🔐 Korumalı Sayfa</h2>
+            <h2 className="text-xl font-semibold mb-4">Korumalı Sayfa</h2>
             <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
     );
 }
 
 export default ProtectedPage;
+
 
