@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import api from "../api";
 import { AuthContext } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";  // ← Buraya eklendi
+import { useNavigate } from "react-router-dom";  
 
 function Login() {
     const { login } = useContext(AuthContext);
@@ -10,7 +10,7 @@ function Login() {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    const navigate = useNavigate();  // ← Buraya eklendi
+    const navigate = useNavigate();  
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -19,14 +19,13 @@ function Login() {
         try {
             const response = await api.post("/auth/login", { email, password });
             const userData = response.data.user;
-            // Başarılı login sonrası AuthContext'e bildir
+            
             login(userData);
 
-            // Opsiyonel: Token'ı localStorage'a kaydet
+            
             localStorage.setItem("token", response.data.token);
 
-            // Başarılı girişte ana sayfaya yönlendir:
-            navigate("/");  // ← Burada eklendi
+            navigate("/"); 
 
         } catch (err) {
             setError(err.response?.data?.message || "Giriş yapılamadı. Lütfen tekrar deneyin.");
@@ -80,6 +79,7 @@ function Login() {
 }
 
 export default Login;
+
 
 
 
