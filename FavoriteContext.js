@@ -17,7 +17,7 @@ export const FavoriteProvider = ({ children }) => {
     };
 
     const clearFavorites = () => {
-        setFavorites([]); // Kullanıcı çıkış yapınca favoriler sıfırlanır
+        setFavorites([]); 
     };
 
     return (
@@ -33,4 +33,5 @@ export const FavoriteProvider = ({ children }) => {
         </FavoriteContext.Provider>
     );
 };
+
 
