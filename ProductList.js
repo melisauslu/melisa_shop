@@ -186,7 +186,7 @@ function ProductList() {
                 <div className="block md:hidden text-center font-medium text-xs">Filtre</div>
             </aside>
 
-            {/* Ürünler */}
+            
             <section className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {products.length === 0 ? (
                     <div className="text-center mt-4 col-span-full">Hiç ürün bulunamadı.</div>
@@ -221,7 +221,7 @@ function ProductList() {
                 )}
             </section>
 
-            {/* ✅ Sayfalama UI */}
+            
             {totalPages > 1 && (
                 <div className="col-span-full flex justify-center items-center gap-2 mt-6">
                     <button
@@ -255,4 +255,5 @@ function ProductList() {
 }
 
 export default ProductList;
+
 S
