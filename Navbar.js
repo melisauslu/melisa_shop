@@ -11,7 +11,7 @@ function Navbar() {
                     MelisaShop
                 </Link>
 
-                {/* Menü (ileride kategori veya arama buraya da eklenebilir) */}
+                
                 <nav className="flex items-center gap-4">
                     <Link
                         to="/products"
@@ -26,7 +26,7 @@ function Navbar() {
                         Sepetim 🛒
                     </Link>
 
-                    {/* Kullanıcı Menüsü (Sadece giriş yaptıysa görünür) */}
+                    
                     <UserMenu />
                 </nav>
             </div>
@@ -35,3 +35,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
