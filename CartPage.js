@@ -28,7 +28,7 @@ const CartPage = () => {
             return;
         }
 
-        // Sipariş verisini model ile uyumlu hale getiriyoruz
+        
         const orderData = {
             items: cartItems.map(item => ({
                 id: item.id,
@@ -42,7 +42,7 @@ const CartPage = () => {
         };
 
         try {
-            // Siparişi backend'e gönder
+           
             await axios.post("http://localhost:5000/api/orders", orderData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -115,7 +115,7 @@ const CartPage = () => {
                 </>
             )}
 
-            {/* ✅ Ödeme Formu */}
+         
             {showPaymentForm && !paymentSuccess && (
                 <form
                     onSubmit={handlePaymentSubmit}
@@ -193,7 +193,7 @@ const CartPage = () => {
                 </form>
             )}
 
-            {/* ✅ Başarılı Ödeme Mesajı */}
+          
             {paymentSuccess && (
                 <div className="mt-6 p-4 border border-green-500 bg-green-100 text-green-800 rounded">
                     <p className="font-semibold">Ödeme başarılı! Siparişiniz alındı.</p>
@@ -204,3 +204,4 @@ const CartPage = () => {
 };
 
 export default CartPage;
+
