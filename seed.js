@@ -26,10 +26,10 @@ mongoose
     .then(async () => {
         console.log("MongoDB bağlantısı başarılı, ürünler ekleniyor...");
 
-        // Önce tüm ürünleri sil (sıfırla)
+        
         await Product.deleteMany({});
 
-        // Sample ürünleri ekle
+       
         await Product.insertMany(sampleProducts);
 
         console.log("Ürünler başarıyla eklendi.");
@@ -38,3 +38,4 @@ mongoose
     .catch((err) => {
         console.error("MongoDB bağlantı hatası:", err);
     });
+
