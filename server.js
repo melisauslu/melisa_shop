@@ -16,7 +16,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => console.log("MongoDB bağlantısı başarılı!"))
-  .catch((err) => console.error("❌ MongoDB bağlantı hatası:", err));
+  .catch((err) => console.error(" MongoDB bağlantı hatası:", err));
 
 
 app.use("/api/products", require("./routes/products"));
@@ -35,3 +35,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Sunucu http://localhost:${PORT} adresinde çalışıyor`);
 });
+
